@@ -1,0 +1,20 @@
+# Introduction to Text-to-Speech
+
+Welcome to the Human-Like TTS Logger for Apple Silicon. This application provides natural-sounding text-to-speech synthesis with comprehensive logging capabilities.
+
+# Features
+
+The application supports multiple TTS engines, including Coqui TTS for local processing and ElevenLabs for cloud-based synthesis. It automatically detects and uses Apple Silicon's Metal Performance Shaders for optimal performance.
+
+# Text Processing
+
+The parser intelligently splits text into segments based on Markdown headers and sentence-ending punctuation. This ensures natural pauses in the generated speech and makes it easier to track progress through longer documents.
+
+# Audio Output
+
+All audio segments are combined into a single output file with optional volume normalization. The system generates detailed logs with timestamps for each segment, making it easy to understand the synthesis process.
+
+# Conclusion
+
+Thank you for using the TTS Logger. We hope you find it useful for your text-to-speech needs!
+

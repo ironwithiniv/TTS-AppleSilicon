@@ -1,0 +1,53 @@
+# TTS Configuration for Apple Silicon
+# Model and voice settings
+
+tts:
+  # Engine: "coqui" (local) or "elevenlabs" (cloud API)
+  engine: "coqui"
+  
+  # Coqui TTS settings
+  coqui:
+    model_name: "tts_models/en/ljspeech/tacotron2-DDC"
+    # Alternative models:
+    # - "tts_models/en/ljspeech/tacotron2-DDC"
+    # - "tts_models/en/vctk/vits"
+    # - "tts_models/multilingual/multi-dataset/xtts_v2"
+    device: "mps"  # Will fallback to "cpu" if MPS not available
+    sample_rate: 22050
+    
+  # ElevenLabs settings (requires API key)
+  elevenlabs:
+    api_key: ""  # Set your API key here if using ElevenLabs
+    voice_id: "21m00Tcm4TlvDq8ikWAM"  # Default voice ID
+    model_id: "eleven_monolingual_v1"
+    
+# Voice settings
+voice:
+  # For Coqui: speaker name or index (depends on model)
+  speaker: None
+  # Speed multiplier (1.0 = normal speed)
+  speed: 1.0
+  
+# Output settings
+output:
+  format: "wav"  # "wav" or "mp3"
+  sample_rate: 22050
+  normalize_audio: true  # Normalize volume using ffmpeg
+  
+# Paths
+paths:
+  input_file: "input.txt"
+  output_dir: "outputs"
+  segments_dir: "outputs/segments"
+  log_file: "outputs/tts_log.txt"
+  final_output: "outputs/output.wav"
+
+# Text processing
+text_processing:
+  # Split by headers (Markdown # syntax)
+  split_by_headers: true
+  # Split by punctuation (., ?, !)
+  split_by_punctuation: true
+  # Minimum segment length (characters) - prevents too short segments
+  min_segment_length: 50
+
